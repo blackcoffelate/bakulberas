@@ -111,4 +111,43 @@ class PoController extends Controller
       return $this->edit($id);
     }
   }
+
+  public function detail($id)
+  {
+    $this->data['po'] = Po::join('supliers', 'supliers.id', '=', 'po.suplier_id')
+      ->select(
+        'po.id',
+        'po.kode',
+        'po.tanggal',
+        'po.suplier_id',
+        'po.jumlah',
+        'po.potongan',
+        'po.total',
+        'po.info',
+        'po.bayar',
+        'po.status',
+        'po.created_at',
+        'po.updated_at',
+        'supliers.nama'
+      )->where('po.id', $id)->first()->toArray();
+    $this->data['poDetail'] = PoDetail::join('products', 'products.id', '=', 'po_detail.product_id')
+      ->select(
+        'po_detail.id',
+        'po_detail.po_id',
+        'po_detail.product_id',
+        'po_detail.qty',
+        'po_detail.harga',
+        'products.nama'
+      )->where('po_detail.po_id', $id)->get()->toArray();
+    return view('pages.po.detail')->with($this->data);
+  }
+
+  public function delete($id)
+  {
+    if (Po::find($id)->delete()) {
+      return redirect()->route('poIndex');
+    } else {
+      return redirect()->route('poIndex');
+    }
+  }
 }

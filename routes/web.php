@@ -28,7 +28,7 @@ Route::prefix('sys')->group(function () {
     Route::get('/detail/{id}', 'SalesController@detail')->name('salesDetail');
     Route::get('/delete/{id}', 'SalesController@delete')->name('salesDelete');
   });
-  
+
   Route::prefix('/customer')->group(function () {
     Route::get('/', 'CustomerController@index')->name('customerIndex');
     Route::get('/new', 'CustomerController@new')->name('customerNew');
@@ -38,7 +38,7 @@ Route::prefix('sys')->group(function () {
     Route::get('/detail/{id}', 'CustomerController@detail')->name('customerDetail');
     Route::get('/delete/{id}', 'CustomerController@delete')->name('customerDelete');
   });
-  
+
   Route::prefix('/suplier')->group(function () {
     Route::get('/', 'SuplierController@index')->name('suplierIndex');
     Route::get('/new', 'SuplierController@new')->name('suplierNew');
@@ -48,7 +48,7 @@ Route::prefix('sys')->group(function () {
     Route::get('/detail/{id}', 'SuplierController@detail')->name('suplierDetail');
     Route::get('/delete/{id}', 'SuplierController@delete')->name('suplierDelete');
   });
-  
+
   Route::prefix('/roles')->group(function () {
     Route::get('/', 'RolesController@index')->name('rolesIndex');
     Route::get('/new', 'RolesController@new')->name('rolesNew');
@@ -58,7 +58,7 @@ Route::prefix('sys')->group(function () {
     Route::get('/detail/{id}', 'RolesController@detail')->name('rolesDetail');
     Route::get('/delete/{id}', 'RolesController@delete')->name('rolesDelete');
   });
-  
+
   Route::prefix('/users')->group(function () {
     Route::get('/', 'UsersController@index')->name('usersIndex');
     Route::get('/new', 'UsersController@new')->name('usersNew');
@@ -127,5 +127,16 @@ Route::prefix('sys')->group(function () {
     Route::get('/update/{id}', 'SoController@update')->name('soUpdate');
     Route::get('/detail/{id}', 'SoController@detail')->name('soDetail');
     Route::get('/delete/{id}', 'SoController@delete')->name('soDelete');
+  });
+
+  Route::prefix('/ro')->group(function () {
+    Route::get('/', 'RoController@index')->name('roIndex');
+    Route::get('/new', 'RoController@new')->name('roNew');
+    Route::post('/insert', 'RoController@insert')->name('roInsert');
+    Route::get('/edit/{id}', 'RoController@edit')->name('roEdit');
+    Route::get('/update/{id}', 'RoController@update')->name('roUpdate');
+    Route::get('/detail/{id}', 'RoController@detail')->name('roDetail');
+    Route::get('/delete/{id}', 'RoController@delete')->name('roDelete');
+    Route::post('/api-detail/{id}', 'RoController@getPoDetail')->name('apiPoDetail');
   });
 });
