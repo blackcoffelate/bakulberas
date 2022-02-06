@@ -11,6 +11,7 @@ class Po extends Model
         'kode',
         'tanggal',
         'suplier_id',
+        'seller_id',
         'jumlah',
         'potongan',
         'total',

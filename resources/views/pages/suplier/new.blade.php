@@ -1,58 +1,53 @@
-{% extends "layouts/master.twig" %}
-{% block content %}
-
+@extends('layouts.master')
+@section('content')
 	<section id="basic-horizontal-layouts">
 		<div class="row">
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">User Form</h4>
+						<h4 class="card-title">Suplier Form</h4>
 					</div>
 					<div class="card-body">
-						<form class="form form-horizontal" method="post" enctype="multipart/form-data">
+						<form class="form form-horizontal" method="post" enctype="multipart/form-data" action="{{ route('suplierInsert')}}">
+							@csrf
 							<div class="row">
 								<div class="col-12">
 									<div class="mb-1 row">
 										<div class="col-sm-3">
-											<label class="col-form-label" for="username">username</label>
+											<label class="col-form-label" for="kode">Kode</label>
 										</div>
 										<div class="col-sm-9">
-											<input type="text" autocomplete="off" id="username" class="form-control" name="o[username]" required="true" placeholder="..." />
+											<input type="text" autocomplete="off" id="kode" class="form-control" name="o[kode]" required="true" value="SUP-{{$kode}}" readonly="true" />
 										</div>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-1 row">
 										<div class="col-sm-3">
-											<label class="col-form-label" for="realname">Realname</label>
+											<label class="col-form-label" for="nama">Nama</label>
 										</div>
 										<div class="col-sm-9">
-											<input type="text" autocomplete="off" id="realname" class="form-control" name="o[realname]" required="true" placeholder="..."/>
+											<input type="text" autocomplete="off" id="nama" class="form-control" name="o[nama]" required="true" placeholder="..."/>
 										</div>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-1 row">
 										<div class="col-sm-3">
-											<label class="col-form-label" for="password">Password</label>
+											<label class="col-form-label" for="alamat">Alamat</label>
 										</div>
 										<div class="col-sm-9">
-											<input type="text" autocomplete="off" id="password" class="form-control" name="o[password]" required="true" placeholder="..."/>
+											<textarea id="alamat" class="form-control" name="o[alamat]" placeholder="..."></textarea>
 										</div>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-1 row">
 										<div class="col-sm-3">
-											<label class="col-form-label" for="role">Role</label>
+											<label class="col-form-label" for="telepon">Telepon</label>
 										</div>
 										<div class="col-sm-9">
-											<select id="role" name="o[role_id]" class="form-select" required="true">
-												<option value="">Pilih role</option>
-											{% for item in roles %}
-												<option value="{{item.id}}">{{item.role}}</option>
-											{% endfor %}
-											</select>
+											<input type="text" autocomplete="off" id="telepon" class="form-control" name="o[telepon]" required="true" placeholder="..."/>
 										</div>
 									</div>
 								</div>
@@ -87,4 +82,4 @@
 			</div>
 		</div>
 	</section>
-{% endblock %}
+@endsection
