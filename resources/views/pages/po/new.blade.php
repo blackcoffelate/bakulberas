@@ -31,15 +31,12 @@
 								<div class="col-md-4">
 									<div class="mb-1">
 										<label class="col-form-label" for="suplier">Suplier</label>
-										<v-select label="nama" required="true" :options="suppliers" :reduce="s => s.id" v-model="suplier_id"></v-select>
-											<input type="text" hidden name="o[suplier_id]" v-model="suplier_id" />
-										{{-- <select class="form-control" required name="o[suplier_id]" v-model="suplier_id">
-											<option value="" disabled>pilih suplier</option>
+                    <select id="suplier" name="o[suplier_id]" class="form-select" required="true">
+											<option value="">Pilih suplier</option>
 											@foreach($supliers as $i)
-											<option value="{{$i->id}}">{{$i->nama}}</option>
+                        <option value="{{$i->id}}">{{$i->nama}}</option>
 											@endforeach
-										</select> --}}
-										{{-- <vue-bootstrap-typeahead v-model="suplier_id" :data="suppliers" style="width: 100%" placeholder="Cari Suplier..." :serializer="s => s.nama" @hit="getSuplierId($event)" style="width: 100%" /> --}}
+                    </select>
 									</div>
 								</div>
 								<div class="col-md-3">
@@ -130,7 +127,7 @@
 					<div class="mb-1">
 						<label class="col-form-label">Produk</label>
 						{{-- <vue-bootstrap-typeahead v-model="item.product_id" :data="products" style="width: 100%" placeholder="Cari nama product..." :serializer="s => s.nama" @hit="getProduct($event)" style="width: 100%" /> --}}
-							<v-select label="nama" @input="getProduct" :options="products" v-model="product"></v-select>
+							<v-select class="style-chooser" label="nama" @input="getProduct" :options="products" v-model="product"></v-select>
 						</div>
 					<div class="mb-1">
 						<label class="col-form-label" for="_harga">Harga</label>
@@ -154,6 +151,15 @@
 @section('css')
 <link href="https://unpkg.com/vue-bootstrap-typeahead/dist/VueBootstrapTypeahead.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/vue-select@3.0.0/dist/vue-select.css">
+<style>
+	.style-chooser .vs__search::placeholder,
+	.style-chooser .vs__dropdown-toggle,
+	.style-chooser .vs__dropdown-menu {
+	background: #efefef;
+	color: #6e6b7b;
+	height: 40px;
+	}
+</style>
 @endsection
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -172,7 +178,7 @@ Vue.component('v-select', VueSelect.VueSelect);
 			jumlah: null
 		}
 	}
-  
+
 new Vue({
   el: '#app',
   component: VueBootstrapTypeahead,
@@ -213,7 +219,7 @@ new Vue({
 		async getProduct(val) {
 			this.item.product_id = val.id
 			this.item.nama = val.nama
-			this.item.harga = val.jual;
+			this.item.harga = val.beli;
 		},
 		async addItem() {
 			this.item.jumlah = parseInt(this.item.qty) * this.item.harga;

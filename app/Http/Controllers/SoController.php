@@ -115,4 +115,30 @@ class SoController extends Controller
       return $this->edit($id);
     }
   }
+
+  public function detail($id) {
+    $this->data['so'] = So::join('customers', 'customers.id', '=', 'so.customer_id')
+      ->join('sales', 'sales.id', '=', 'so.seller_id')
+      ->select(
+        'so.id',
+        'so.kode',
+        'so.tanggal',
+        'so.jumlah',
+        'so.status',
+        'so.created_at',
+        'so.updated_at',
+        'customers.nama as namacustomer',
+        'sales.nama as namasales'
+      )->where('so.id', $id)->first()->toArray();
+    $this->data['soDetail'] = SoDetail::join('products', 'products.id', '=', 'so_detail.product_id')
+      ->select(
+        'so_detail.id',
+        'so_detail.so_id',
+        'so_detail.product_id',
+        'so_detail.qty',
+        'so_detail.harga',
+        'products.nama'
+      )->where('so_detail.so_id', $id)->get()->toArray();
+    return view('pages.so.detail')->with($this->data);
+  }
 }

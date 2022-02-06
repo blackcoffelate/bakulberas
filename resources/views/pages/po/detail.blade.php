@@ -12,52 +12,52 @@
 							<table class="table table-striped table-borderless">
 								<tbody>
 									<tr>
-										<td>Kode PO</td>
+										<td>KODE PO</td>
 										<td>:</td>
 										<td>{{$po['kode']}}</td>
 									</tr>
 									<tr>
-										<td>Suplier</td>
+										<td>SUPLIER</td>
 										<td>:</td>
 										<td>{{$po['nama']}}</td>
 									</tr>
 									<tr>
-										<td>Tanggal</td>
+										<td>TANGGAL</td>
 										<td>:</td>
 										<td>{{$po['tanggal']}}</td>
 									</tr>
 									<tr>
-										<td>Jumlah</td>
+										<td>JUMLAH</td>
 										<td>:</td>
-										<td>Rp.{{number_format($po['jumlah'],0,',','.')}}</td>
+										<td>Rp. {{number_format($po['jumlah'],0,',','.')}}</td>
 									</tr>
 									<tr>
-										<td>Potongan</td>
+										<td>POTONGAN</td>
 										<td>:</td>
-										<td>Rp.{{number_format($po['potongan'],0,',','.')}}</td>
+										<td>Rp. {{number_format($po['potongan'],0,',','.')}}</td>
 									</tr>
 									<tr>
-										<td>Total</td>
+										<td>TOTAL</td>
 										<td>:</td>
-										<td>Rp.{{number_format($po['total'],0,',','.')}}</td>
+										<td>Rp. {{number_format($po['total'],0,',','.')}}</td>
 									</tr>
 									<tr>
-										<td>Bayar</td>
+										<td>BAYAR</td>
 										<td>:</td>
-										<td>Rp.{{number_format($po['bayar'],0,',','.')}}</td>
+										<td>Rp. {{number_format($po['bayar'],0,',','.')}}</td>
 									</tr>
 									<tr>
-										<td>Status</td>
+										<td>STATUS</td>
 										<td>:</td>
 										<td>{{$po['status']}}</td>
 									</tr>
 									<tr>
-										<td>Created at</td>
+										<td>CREATED</td>
 										<td>:</td>
 										<td>{{$po['created_at']}}</td>
 									</tr>
 									<tr>
-										<td>Updated at</td>
+										<td>UPDATED</td>
 										<td>:</td>
 										<td>{{$po['updated_at']}}</td>
 									</tr>
@@ -101,4 +101,4 @@
 			</div>
 		</div>
 	</section>
-	@endsection
+@endsection

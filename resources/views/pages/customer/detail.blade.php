@@ -13,42 +13,42 @@
 							<table class="table table-striped table-borderless">
 								<tbody>
 									<tr>
-										<td>Kode</td>
+										<td>KODE</td>
 										<td>:</td>
 										<td>{{$customer['kode']}}</td>
 									</tr>
 									<tr>
-										<td>Nama</td>
+										<td>NAMA</td>
 										<td>:</td>
 										<td>{{$customer['nama']}}</td>
 									</tr>
 									<tr>
-										<td>Alamat</td>
+										<td>ALAMAT</td>
 										<td>:</td>
 										<td>{{$customer['alamat']}}</td>
 									</tr>
 									<tr>
-										<td>Telepon</td>
+										<td>TELEPON</td>
 										<td>:</td>
 										<td>{{$customer['telepon']}}</td>
 									</tr>
 									<tr>
-										<td>Info</td>
+										<td>INFO</td>
 										<td>:</td>
 										<td>{{$customer['info']}}</td>
 									</tr>
 									<tr>
-										<td>Sales</td>
+										<td>SALES</td>
 										<td>:</td>
 										<td>{{$customer['namasales']}}</td>
 									</tr>
 									<tr>
-										<td>Created at</td>
+										<td>CREATED</td>
 										<td>:</td>
 										<td>{{$customer['created_at']}}</td>
 									</tr>
 									<tr>
-										<td>Updated at</td>
+										<td>UPDATED</td>
 										<td>:</td>
 										<td>{{$customer['updated_at']}}</td>
 									</tr>
