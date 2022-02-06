@@ -8,7 +8,7 @@
 					<div class="card-header">
 						<div class="head-label">
 						<h6 class="mb-0">
-							PESANAN PEMBELIAN
+							EDIT PEMBELIAN
 						</h6>
 						</div>
 					</div>

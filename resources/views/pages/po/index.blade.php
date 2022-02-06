@@ -22,7 +22,7 @@
 									<td>{{$list->kode}}</td>
 									<td>{{$list->tanggal}}</td>
 									<td>{{$list->nama}}</td>
-									<td>{{$list->jumlah}}</td>
+									<td>Rp.{{number_format($list->jumlah,0,',','.')}}</td>
 									<td>-</td>
 									<td>{{$list->status}}</td>
 									<td class="text-center">

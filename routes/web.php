@@ -68,4 +68,15 @@ Route::prefix('sys')->group(function () {
     Route::get('/detail/{id}', 'PoController@detail')->name('poDetail');
     Route::get('/delete/{id}', 'PoController@delete')->name('poDelete');
   });
+
+  Route::prefix('/ro')->group(function () {
+    Route::get('/', 'RoController@index')->name('roIndex');
+    Route::get('/new', 'RoController@new')->name('roNew');
+    Route::post('/insert', 'RoController@insert')->name('roInsert');
+    Route::get('/edit/{id}', 'RoController@edit')->name('roEdit');
+    Route::get('/update/{id}', 'RoController@update')->name('roUpdate');
+    Route::get('/detail/{id}', 'RoController@detail')->name('roDetail');
+    Route::get('/delete/{id}', 'RoController@delete')->name('roDelete');
+    Route::post('/api-detail/{id}', 'RoController@getPoDetail')->name('apiPoDetail');
+  });
 });

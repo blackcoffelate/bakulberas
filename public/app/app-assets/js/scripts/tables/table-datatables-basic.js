@@ -39,3 +39,4 @@ $(function () {
     $('div.head-label').html('<h6 class="mb-0">'+dt_basic_table.data('label')+'</h6>')
   }
 })
+
