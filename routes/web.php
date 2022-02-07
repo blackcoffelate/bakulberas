@@ -113,20 +113,13 @@ Route::prefix('sys')->group(function () {
     Route::get('/', 'PoController@index')->name('poIndex');
     Route::get('/new', 'PoController@new')->name('poNew');
     Route::post('/insert', 'PoController@insert')->name('poInsert');
+    Route::get('/bayar/{id}', function() {
+      return view('pages.po.bayar.index');
+    })->name('poBayar');
     Route::get('/edit/{id}', 'PoController@edit')->name('poEdit');
     Route::get('/update/{id}', 'PoController@update')->name('poUpdate');
     Route::get('/detail/{id}', 'PoController@detail')->name('poDetail');
     Route::get('/delete/{id}', 'PoController@delete')->name('poDelete');
-  });
-
-  Route::prefix('/so')->group(function () {
-    Route::get('/', 'SoController@index')->name('soIndex');
-    Route::get('/new', 'SoController@new')->name('soNew');
-    Route::post('/insert', 'SoController@insert')->name('soInsert');
-    Route::get('/edit/{id}', 'SoController@edit')->name('soEdit');
-    Route::get('/update/{id}', 'SoController@update')->name('soUpdate');
-    Route::get('/detail/{id}', 'SoController@detail')->name('soDetail');
-    Route::get('/delete/{id}', 'SoController@delete')->name('soDelete');
   });
 
   Route::prefix('/ro')->group(function () {
@@ -138,5 +131,15 @@ Route::prefix('sys')->group(function () {
     Route::get('/detail/{id}', 'RoController@detail')->name('roDetail');
     Route::get('/delete/{id}', 'RoController@delete')->name('roDelete');
     Route::post('/api-detail/{id}', 'RoController@getPoDetail')->name('apiPoDetail');
+  });
+
+  Route::prefix('/so')->group(function () {
+    Route::get('/', 'SoController@index')->name('soIndex');
+    Route::get('/new', 'SoController@new')->name('soNew');
+    Route::post('/insert', 'SoController@insert')->name('soInsert');
+    Route::get('/edit/{id}', 'SoController@edit')->name('soEdit');
+    Route::get('/update/{id}', 'SoController@update')->name('soUpdate');
+    Route::get('/detail/{id}', 'SoController@detail')->name('soDetail');
+    Route::get('/delete/{id}', 'SoController@delete')->name('soDelete');
   });
 });

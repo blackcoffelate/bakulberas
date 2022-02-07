@@ -5,7 +5,7 @@
 			<div class="col-md-12 col-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">PENERIMAAN PEMBELIAN</h4>
+						<h6>PENERIMAAN PEMBELIAN</h6>
 					</div>
 					<div class="card-body">
 						<form class="form form-horizontal" method="post" action="{{ route('roInsert')}}">
@@ -109,7 +109,7 @@
 									<td class="text-center">{{$list['kode']}}</td>
 									<td>{{$list['nama_suplier']}}</td>
 									<td>{{$list['tanggal']}}</td>
-									<td>Rp.{{number_format($list['jumlah'],0,',','.')}}</td>
+									<td>Rp.{{number_format($list['total'],0,',','.')}}</td>
 									<td class="text-center">
 										<a href="{{route('roDetail', $list['id'])}}" class="item-edit">
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">

@@ -18,7 +18,8 @@ class RoController extends Controller
         'po.kode',
         'po.tanggal',
         'supliers.nama',
-        'po.jumlah',
+        'po.total',
+        'po.potongan',
         'po.status'
       )->get();
     $this->data['ro'] = Ro::join('po', 'po.id', '=', 'ro.po_id')
